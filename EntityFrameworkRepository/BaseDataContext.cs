@@ -1,5 +1,4 @@
-﻿using BaseEntity;
-using EntityFrameworkRepository.Interfaces;
+﻿using EntityFrameworkRepository.Interfaces;
 using IRepository;
 using System;
 using System.Collections.Generic;
@@ -19,19 +18,18 @@ namespace EntityFrameworkRepository
             Database.SetInitializer<BaseDataContext>(null);
         }
 
-        public new IDbSet<T> Set<T>() where T : Entity
+        public new IDbSet<T> Set<T>() where T : class
         {
             return base.Set<T>();
         }
 
-        public new DbEntityEntry<T> Entry<T>(T entity) where T : Entity
+        public new DbEntityEntry<T> Entry<T>(T entity) where T : class
         {
             return base.Entry<T>(entity);
         }
 
         public override int SaveChanges()
         {
-            this.ApplyAuditChanges();
             return base.SaveChanges();
         }
 
@@ -43,20 +41,7 @@ namespace EntityFrameworkRepository
             base.OnModelCreating(modelBuilder);
         }
 
-        public void ApplyAuditChanges()
-        {
-            foreach (var dbEntityEntry in this.ChangeTracker.Entries().Where(e => e.Entity is IAuditDateInfo && (e.State == EntityState.Modified || e.State == EntityState.Added)))
-            {
-                var e = (IAuditDateInfo)dbEntityEntry.Entity;
-                if (dbEntityEntry.State == EntityState.Added)
-                {
-                    e.CreatedOn = DateTime.Now;
-                }
-                e.ModifiedOn = DateTime.Now;
-            }
-        }
-
-        public IEnumerable<T> SqlCommand<T>(string cmd) where T : Entity
+        public IEnumerable<T> SqlCommand<T>(string cmd) where T : class
         {
             return this.Database.SqlQuery<T>(cmd).ToList();
         }

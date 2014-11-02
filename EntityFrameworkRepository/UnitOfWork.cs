@@ -1,5 +1,4 @@
-﻿using BaseEntity;
-using EntityFrameworkRepository.Interfaces;
+﻿using EntityFrameworkRepository.Interfaces;
 using GenericRepository.Infrastructure;
 using IRepository;
 using System;
@@ -44,7 +43,7 @@ namespace EntityFrameworkRepository
             _disposed = true;
         }
 
-        public IRepository<T> Repository<T>() where T : Entity
+        public IRepository<T> Repository<T>() where T : class
         {
             if (_repositories == null)
                 _repositories = new Hashtable();

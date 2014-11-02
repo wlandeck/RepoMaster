@@ -1,5 +1,4 @@
-﻿using BaseEntity;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
@@ -12,9 +11,9 @@ namespace EntityFrameworkRepository.Interfaces
     public interface IDataContext : IDisposable, IObjectContextAdapter
     {
         void ApplyAuditChanges();
-        IEnumerable<T> SqlCommand<T>(string cmd) where T : Entity;
-        DbEntityEntry<T> Entry<T>(T entity) where T : Entity;
-        IDbSet<T> Set<T>() where T : Entity;
+        IEnumerable<T> SqlCommand<T>(string cmd) where T : class;
+        DbEntityEntry<T> Entry<T>(T entity) where T : class;
+        IDbSet<T> Set<T>() where T : class;
         int SaveChanges();
     }
 }

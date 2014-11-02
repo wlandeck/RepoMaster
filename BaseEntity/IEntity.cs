@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace BaseEntity
 {
-    public class Entity
-    {
-        int Id { get; set; }
-    }
+    //public abstract class Entity
+    //{
+    //    public virtual Type Id { get; set; }
+    //}
 }

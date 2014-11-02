@@ -56,10 +56,6 @@
     <Compile Include="UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BaseEntity\BaseEntity.csproj">
-      <Project>{b84f85a8-988d-475d-b205-e5b50e85e84d}</Project>
-      <Name>BaseEntity</Name>
-    </ProjectReference>
     <ProjectReference Include="..\GenericRepository.Infrastructure\GenericRepository.Infrastructure.csproj">
       <Project>{56cf9353-a2ad-4700-8dc4-7394e0db6d5a}</Project>
       <Name>GenericRepository.Infrastructure</Name>

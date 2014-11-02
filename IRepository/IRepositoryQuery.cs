@@ -1,5 +1,4 @@
-﻿using BaseEntity;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
@@ -8,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace IRepository
 {
-    public interface IRepositoryQuery<TEntity> where TEntity : Entity
+    public interface IRepositoryQuery<TEntity> where TEntity : class
     {
         IRepositoryQuery<TEntity> Filter(
             Expression<Func<TEntity, bool>> filter);

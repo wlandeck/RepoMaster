@@ -1,5 +1,4 @@
-﻿using BaseEntity;
-using IRepository;
+﻿using IRepository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace EntityFrameworkRepository
 {
-    public sealed class RepositoryQuery<TEntity> : IRepositoryQuery<TEntity> where TEntity : Entity
+    public sealed class RepositoryQuery<TEntity> : IRepositoryQuery<TEntity> where TEntity : class
     {
         private readonly List<Expression<Func<TEntity, object>>>
             _includeProperties;

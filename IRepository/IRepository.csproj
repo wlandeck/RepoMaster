@@ -39,17 +39,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IAuditDateInfo.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="IRepositoryQuery.cs" />
     <Compile Include="IUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\BaseEntity\BaseEntity.csproj">
-      <Project>{b84f85a8-988d-475d-b205-e5b50e85e84d}</Project>
-      <Name>BaseEntity</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

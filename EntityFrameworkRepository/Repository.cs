@@ -1,5 +1,4 @@
-﻿using BaseEntity;
-using EntityFrameworkRepository.Interfaces;
+﻿using EntityFrameworkRepository.Interfaces;
 using GenericRepository.Infrastructure;
 using IRepository;
 using System;
@@ -8,12 +7,13 @@ using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace EntityFrameworkRepository
 {
-    public class Repository<TEntity> : IRepository<TEntity> where TEntity : Entity
+    public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     {
         internal IDataContext Context;
         internal IDbSet<TEntity> DbSet;
