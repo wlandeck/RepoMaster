@@ -10,7 +10,6 @@ namespace EntityFrameworkRepository.Interfaces
 {
     public interface IDataContext : IDisposable, IObjectContextAdapter
     {
-        void ApplyAuditChanges();
         IEnumerable<T> SqlCommand<T>(string cmd) where T : class;
         DbEntityEntry<T> Entry<T>(T entity) where T : class;
         IDbSet<T> Set<T>() where T : class;

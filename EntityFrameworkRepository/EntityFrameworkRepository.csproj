@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="BaseDataContext.cs" />
     <Compile Include="Constants.cs" />
+    <Compile Include="Infrastructure\Guard.cs" />
     <Compile Include="Interfaces\IDataContext.cs" />
     <Compile Include="Repository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -56,10 +57,6 @@
     <Compile Include="UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GenericRepository.Infrastructure\GenericRepository.Infrastructure.csproj">
-      <Project>{56cf9353-a2ad-4700-8dc4-7394e0db6d5a}</Project>
-      <Name>GenericRepository.Infrastructure</Name>
-    </ProjectReference>
     <ProjectReference Include="..\IRepository\IRepository.csproj">
       <Project>{136f50ae-19c1-411e-8b5e-29344586b19b}</Project>
       <Name>IRepository</Name>

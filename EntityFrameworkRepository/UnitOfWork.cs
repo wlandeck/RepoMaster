@@ -1,5 +1,5 @@
-﻿using EntityFrameworkRepository.Interfaces;
-using GenericRepository.Infrastructure;
+﻿using EntityFrameworkRepository.Infrastructure;
+using EntityFrameworkRepository.Interfaces;
 using IRepository;
 using System;
 using System.Collections;
